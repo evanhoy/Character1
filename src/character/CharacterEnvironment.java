@@ -16,10 +16,11 @@ import java.awt.event.MouseEvent;
  */
 class CharacterEnvironment extends Environment {
 
-    private Cartman theChamp;
+    private Cartman theChamp, theWee;
 
     public CharacterEnvironment() {
-        theChamp = new Cartman(100, 100);
+        theChamp = new Cartman(100, 100, 400, 400);
+        theWee = new Cartman(550, 100, 200, 200);
     }
 
     @Override
@@ -46,6 +47,9 @@ class CharacterEnvironment extends Environment {
     public void paintEnvironment(Graphics graphics) {
         if (theChamp != null) {
             theChamp.draw(graphics);
+        }
+        if (theWee != null) {
+            theWee.draw(graphics);
         }
     }
 

@@ -14,17 +14,26 @@ import java.awt.Graphics;
  */
 public class Cartman {
 
-    public Cartman(int x, int y) {
+    public Cartman(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;            
     }
 
     public void draw(Graphics graphics) {
+        graphics.setColor(Color.blue);
+        graphics.drawRect(x, y, width, height);
+        
+        
         //feet
         graphics.setColor(Color.BLACK);
-        graphics.fillOval(140, 390, 120, 40);
+//        graphics.fillOval(140, 390, 120, 40);
+        graphics.fillOval(x + (width * 10 / 100), y + (height * 90 / 100), width * 28 / 100, height * 10 / 100);
         graphics.setColor(Color.BLACK);
-        graphics.fillOval(280, 390, 120, 40);
+        graphics.fillOval(x + (width * 55 / 100), y + (height * 90 / 100), width * 28 / 100, height * 10 / 100);
+//        graphics.fillOval(280, 390, 120, 40);
+
         //legs
         graphics.setColor(new Color(102, 51, 0));
         graphics.fillOval(127, 280, 290, 140);
@@ -83,5 +92,6 @@ public class Cartman {
 
     private int x;
     private int y;
+    private int width, height;
 
 }
